@@ -1,0 +1,136 @@
+img {
+    height: clamp(200px, 100%, 400px);
+    object-fit: cover;
+}
+
+// MEDIA QUERIES
+
+@media (max-width: 767px) {
+
+    // IMAGES
+
+    img {
+        height: 200px;
+        max-width: 100%;
+    }
+
+    // HEADER AND FOOTER NAV
+
+    .header-nav,
+    .footer-nav,
+    .footer-tagline,
+    .arrow-left,
+    .arrow-right {
+        position: absolute;
+        left: -99999px;
+        top: -99999px;
+    }
+
+    .mobile-nav {
+        position: fixed;
+        bottom: 0;
+        height: 75px;
+        overflow: hidden;
+        width: 100%;
+        background: #fff;
+        z-index: 10;
+
+        ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        li {
+            list-style: none;
+            display: block;
+
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $coffee;
+                font-size: 1rem;
+                padding: 10px 50px;
+
+                .nav-icon {
+                    height: 50px;
+
+                    img {
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+
+    // MAIN
+
+    .casestudy-main {
+
+        p {
+            font-size: 85%;
+            text-align: center;
+        }
+
+        img {
+            max-height: 200px;
+            width: auto;
+        }
+
+        .casestudy-project-process {
+            margin: 0;
+
+            .casestudy-process {
+
+                .body-copy {
+                    min-width: 350px;
+                }
+
+                .casestudy-process-images {
+                    width: auto;
+                }
+            }
+        }
+
+        .casestudy-more-projects {
+
+            hr {
+                opacity: 0;
+            }
+
+            .more-projects {
+
+                a {
+                    border: 1px solid $coffee;
+                    font-size: .8em;
+                }
+            }
+
+        }
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        flex-grow: 0;
+        flex-direction: column;
+
+        .image-collection {
+            display: flex;
+            flex-direction: column;
+
+            img {
+                margin: 1.5em;
+            }
+        }
+
+    }
+}
+
+@media (min-width: 767px) {
+    .mobile-nav {
+        position: absolute;
+        left: -99999px;
+        top: -99999px;
+    }
+}

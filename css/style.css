@@ -1,0 +1,772 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  user-select: none;
+}
+nav li {
+  outline: 0;
+}
+nav li a {
+  text-decoration: none;
+}
+
+.header-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 75px;
+  overflow: hidden;
+  border-right: 0px solid rgb(255, 214, 214);
+  transition: all 0.05s ease-out;
+  z-index: 10;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.header-nav .site-nav {
+  position: relative;
+  display: block;
+  font-family: "the-seasons", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.header-nav .site-nav li {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+}
+.header-nav .site-nav li:hover {
+  background-color: rgb(255, 214, 214);
+}
+.header-nav .site-nav a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-size: 1rem;
+  transition: all 0.1s linear;
+  padding: 15px 0;
+}
+.header-nav .site-nav a:hover {
+  color: #333;
+}
+.header-nav .site-nav a .nav-icon {
+  height: 50px;
+}
+.header-nav:hover {
+  width: 160px;
+  overflow: visible;
+  background-color: rgb(253, 229, 229);
+}
+
+.active {
+  background-color: rgb(255, 214, 214);
+}
+
+.vertical-text {
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  left: -0.3em;
+  font-family: "the-seasons", sans-serif;
+  font-size: 3em;
+  padding: 0.25em;
+  text-transform: lowercase;
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+}
+
+.vertical-text.tagline {
+  left: 75px;
+  font-size: 1.5em;
+  bottom: 0.3em;
+  color: #e041d5;
+}
+
+.footer-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 75px;
+  overflow: hidden;
+  border-left: 0px solid rgb(255, 214, 214);
+  background: rgba(255, 255, 255, 0.5);
+  transition: width 0.05s linear;
+  z-index: 10;
+  padding-top: 15px;
+}
+.footer-nav li {
+  position: relative;
+  display: block;
+  width: 180px;
+  font-family: "the-seasons", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.footer-nav li:hover {
+  text-decoration: none;
+  background-color: rgb(255, 214, 214);
+}
+.footer-nav li a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-size: 1rem;
+  transition: all 0.1s linear;
+  padding: 15px 0;
+}
+.footer-nav li a:hover {
+  color: #333;
+}
+.footer-nav li a .nav-icon {
+  height: 50px;
+}
+.footer-nav:hover {
+  width: 180px;
+  overflow: visible;
+  background-color: rgb(253, 229, 229);
+}
+
+.nav-text {
+  width: 100px;
+  height: 25px;
+  padding: 0 15px;
+}
+
+.active {
+  background-color: rgb(255, 214, 214);
+}
+
+.footer-tagline {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-family: "apparat-light", sans-serif;
+  font-size: 1.5em;
+  padding: 1em;
+  text-transform: lowercase;
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+}
+
+.section-title {
+  display: flex;
+  justify-content: center;
+}
+
+.work {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.card {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background: #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  filter: grayscale(1);
+  transition: 0.5s;
+}
+.card:hover {
+  filter: grayscale(0);
+}
+.card .poster {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.card .poster img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card .details {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  background: rgba(255, 255, 255, 0.7);
+  transition: 0.3s;
+  z-index: 2;
+}
+.card .details h1 {
+  color: #333;
+  font-size: 1.5em;
+  padding: 1em;
+}
+
+.poster::before {
+  content: "";
+  position: absolute;
+  bottom: -45%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: 0.3s;
+}
+
+.card:hover .details {
+  bottom: 0;
+}
+
+.card2:hover .details {
+  bottom: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1400px;
+  padding: 0 75px;
+  margin: 0 auto;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70svh;
+}
+.hero .title {
+  display: block;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 3em 0;
+}
+.hero .title h1 {
+  font-family: "liebelotte-swell", sans-serif;
+  color: #333;
+  text-transform: none;
+  font-size: clamp(4em, 18vw, 18em);
+  line-height: 1;
+}
+.hero .title h2 {
+  font-family: "the-seasons", sans-serif;
+  text-transform: none;
+  font-size: clamp(2em, 5vw, 5em);
+}
+
+.moving-down-arrow {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 0 auto;
+  transform: translateX(-50%);
+}
+.moving-down-arrow .arrow-down {
+  width: 28px;
+  height: 8px;
+  opacity: 0;
+  transform: scale3d(0.5, 0.5, 0.5);
+  animation: scroll 1.5s ease-out infinite;
+}
+.moving-down-arrow .arrow-down:before, .moving-down-arrow .arrow-down:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 51%;
+  background: #333;
+}
+.moving-down-arrow .arrow-down:before {
+  left: 0;
+  transform: skew(0deg, 30deg);
+}
+.moving-down-arrow .arrow-down:after {
+  right: 0;
+  width: 50%;
+  transform: skew(0deg, -30deg);
+}
+
+@keyframes scroll {
+  25% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  67% {
+    opacity: 1;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(45px);
+  }
+}
+.projects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5em;
+}
+.projects .title {
+  display: block;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: 5em auto;
+}
+
+.about .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about .container .about-me {
+  display: flex;
+  align-items: center;
+  margin: 2em;
+}
+.about .container .about-me h1 {
+  font-family: "liebelotte-swell", sans-serif;
+  color: #333;
+  text-transform: none;
+  font-size: clamp(4em, 18vw, 18em);
+}
+.about .container .about-me p {
+  font-family: "apparat-light", sans-serif;
+  line-height: 1.5;
+}
+.about .container .button {
+  background-color: #333;
+  padding: 1em 1.5em;
+  margin: 2em;
+}
+.about .container .button:hover {
+  background-color: #949494;
+}
+.about .container .button:hover a {
+  color: #333;
+}
+.about .container .button a {
+  text-decoration: none;
+  padding: 2em;
+  color: white;
+}
+.about .container .contact-info h3 {
+  font-family: "the-seasons", sans-serif;
+  text-transform: none;
+  font-size: clamp(2em, 3vw, 3em);
+  text-transform: capitalize;
+  margin: 2em auto 0.5em auto;
+}
+
+.casestudy-main {
+  width: 100%;
+}
+.casestudy-main .casestudy-project-overview {
+  margin-bottom: 10em;
+}
+.casestudy-main .casestudy-project-overview .casestudy-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.casestudy-main .casestudy-project-overview .casestudy-hero .casestudy-title {
+  font-family: "the-seasons", sans-serif;
+  color: #333;
+  margin-top: 1.5em;
+  font-size: clamp(3em, 9vw, 9em);
+  text-align: center;
+  text-transform: none;
+}
+.casestudy-main .casestudy-project-overview .casestudy-hero .casestudy-hero-image {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 2em;
+}
+.casestudy-main .casestudy-project-overview .casestudy-hero .casestudy-hero-image img {
+  height: 600px;
+}
+.casestudy-main .casestudy-project-overview .casestudy-hero .casestudy-overview {
+  display: flex;
+  flex: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+  margin: 5em auto;
+}
+.casestudy-main .casestudy-project-overview .casestudy-hero .casestudy-overview p {
+  font-family: "apparat-light", sans-serif;
+  line-height: 1.5;
+}
+.casestudy-main .casestudy-project-overview .casestudy-hero .casestudy-overview .casestudy-software,
+.casestudy-main .casestudy-project-overview .casestudy-hero .casestudy-overview .casestudy-year {
+  display: flex;
+  flex-direction: column;
+}
+.casestudy-main .casestudy-project-overview .casestudy-hero .casestudy-overview .casestudy-software h3,
+.casestudy-main .casestudy-project-overview .casestudy-hero .casestudy-overview .casestudy-year h3 {
+  font-family: "the-seasons", sans-serif;
+  font-size: clamp(1em, 2vw, 2em);
+  margin-top: 0.5em;
+  text-transform: none;
+}
+.casestudy-main .casestudy-project-overview .casestudy-hero .casestudy-overview .casestudy-software span,
+.casestudy-main .casestudy-project-overview .casestudy-hero .casestudy-overview .casestudy-year span {
+  font-family: "apparat-light", sans-serif;
+  line-height: 1.5;
+}
+.casestudy-main .casestudy-project-process .casestudy-process {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8em auto;
+}
+.casestudy-main .casestudy-project-process .casestudy-process p {
+  padding: 1em;
+  font-family: "apparat-light", sans-serif;
+  line-height: 1.5;
+}
+.casestudy-main .casestudy-project-process .casestudy-process .one-whole {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.casestudy-main .casestudy-project-process .casestudy-process .body-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.casestudy-main .casestudy-project-process .one-whole.casestudy-process-images,
+.casestudy-main .casestudy-project-process .two-thirds.casestudy-process-images {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.casestudy-main .casestudy-project-process .casestudy-process-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+.casestudy-main .casestudy-project-process .casestudy-process-images .image-collection {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+.casestudy-main .casestudy-project-process .smaller {
+  height: 250px;
+  margin: 0;
+}
+.casestudy-main .casestudy-project-process img {
+  height: 450px;
+  max-width: 100%;
+  margin: 1em;
+}
+.casestudy-main .casestudy-project-process .caption {
+  display: flex;
+  align-items: center;
+}
+.casestudy-main .casestudy-project-process .caption .image-caption {
+  font-family: "the-seasons", sans-serif;
+  text-transform: capitalize;
+  font-size: clamp(2em, 5vw, 5em);
+}
+.casestudy-main .casestudy-project-process .caption .section-line {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.casestudy-main .casestudy-project-process .caption .section-line:after {
+  content: "";
+  width: 100%;
+  height: 5px;
+  border-bottom: 5px solid #333;
+  z-index: -1;
+}
+.casestudy-main .casestudy-project-process .caption .section-line.swapped {
+  flex-direction: row-reverse;
+}
+.casestudy-main .casestudy-more-projects {
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 10em;
+}
+.casestudy-main .casestudy-more-projects .container {
+  width: 800px;
+}
+.casestudy-main .casestudy-more-projects .container .more-projects {
+  display: flex;
+  justify-content: space-between;
+}
+.casestudy-main .casestudy-more-projects .container .more-projects .previous-project,
+.casestudy-main .casestudy-more-projects .container .more-projects .next-project {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.casestudy-main .casestudy-more-projects .container .more-projects a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #949494;
+  font-family: "the-seasons", sans-serif;
+  font-size: 2em;
+  font-weight: 700;
+  line-height: 3;
+  transition: all 0.3s ease-out;
+}
+.casestudy-main .casestudy-more-projects .container .more-projects a .arrow-left,
+.casestudy-main .casestudy-more-projects .container .more-projects a .arrow-right {
+  fill: #949494;
+}
+.casestudy-main .casestudy-more-projects .container .more-projects a .top-right-line {
+  fill: blue;
+}
+.casestudy-main .casestudy-more-projects .container .more-projects a .top-left-line,
+.casestudy-main .casestudy-more-projects .container .more-projects a .bottom-left-line,
+.casestudy-main .casestudy-more-projects .container .more-projects a .top-right-line,
+.casestudy-main .casestudy-more-projects .container .more-projects a .bottom-right-line {
+  opacity: 1;
+  transition: all 0.2s ease-out;
+}
+.casestudy-main .casestudy-more-projects .container .more-projects a .top-left-line,
+.casestudy-main .casestudy-more-projects .container .more-projects a .bottom-left-line {
+  transform-origin: left;
+}
+.casestudy-main .casestudy-more-projects .container .more-projects a .top-right-line,
+.casestudy-main .casestudy-more-projects .container .more-projects a .bottom-right-line {
+  transform-origin: right;
+}
+.casestudy-main .casestudy-more-projects .container .more-projects a:hover {
+  color: #333;
+}
+.casestudy-main .casestudy-more-projects .container .more-projects a:hover .arrow-left,
+.casestudy-main .casestudy-more-projects .container .more-projects a:hover .arrow-right {
+  fill: #333;
+}
+.casestudy-main .casestudy-more-projects .container .more-projects a:hover .top-left-line,
+.casestudy-main .casestudy-more-projects .container .more-projects a:hover .bottom-left-line,
+.casestudy-main .casestudy-more-projects .container .more-projects a:hover .top-right-line,
+.casestudy-main .casestudy-more-projects .container .more-projects a:hover .bottom-right-line {
+  opacity: 1;
+}
+.casestudy-main .casestudy-more-projects .container .more-projects a:hover .top-left-line {
+  transform: rotate(-45deg);
+}
+.casestudy-main .casestudy-more-projects .container .more-projects a:hover .bottom-left-line {
+  transform: rotate(45deg);
+}
+.casestudy-main .casestudy-more-projects .container .more-projects a:hover .top-right-line {
+  transform: rotate(45deg);
+  transform: translateX(0);
+  fill: red;
+}
+.casestudy-main .casestudy-more-projects .container .more-projects a:hover .bottom-right-line {
+  transform: rotate(-45deg);
+  transform: translateX(0);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "apparat-light", sans-serif;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(3em, 15vw, 15em);
+}
+
+h2 {
+  font-size: clamp(2em, 10vw, 10em);
+  color: #333;
+}
+
+h3 {
+  font-size: clamp(1em, 5vw, 5em);
+  color: #333;
+}
+
+p {
+  max-width: clamp(300px, 25vw, 500px);
+  margin: 0 1em;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -1%;
+  margin-right: -1%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3em;
+}
+.row.swapped {
+  flex-direction: row-reverse;
+}
+.row > * {
+  margin: 1%;
+  flex-grow: 1;
+}
+.row .centered {
+  margin: 0 auto;
+}
+.row .one-whole {
+  width: 98%;
+}
+.row .one-half {
+  width: 48%;
+}
+.row .one-third {
+  width: 31.333%;
+}
+.row .two-thirds {
+  width: 64.666%;
+}
+.row .one-fourth {
+  width: 23%;
+}
+.row .three-fourths {
+  width: 73%;
+}
+.row .push-one-fourth {
+  margin-left: 26%;
+}
+.row .push-one-third {
+  margin-left: 34.333%;
+}
+.row .push-one-half {
+  margin-left: 51%;
+}
+.row .centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img {
+  height: clamp(200px, 100%, 400px);
+  object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  img {
+    height: 200px;
+    max-width: 100%;
+  }
+  .header-nav,
+  .footer-nav,
+  .footer-tagline,
+  .arrow-left,
+  .arrow-right {
+    position: absolute;
+    left: -99999px;
+    top: -99999px;
+  }
+  .mobile-nav {
+    position: fixed;
+    bottom: 0;
+    height: 75px;
+    overflow: hidden;
+    width: 100%;
+    background: #fff;
+    z-index: 10;
+  }
+  .mobile-nav ul {
+    display: flex;
+    justify-content: center;
+  }
+  .mobile-nav li {
+    list-style: none;
+    display: block;
+  }
+  .mobile-nav li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-size: 1rem;
+    padding: 10px 50px;
+  }
+  .mobile-nav li a .nav-icon {
+    height: 50px;
+  }
+  .mobile-nav li a .nav-icon img {
+    object-fit: cover;
+  }
+  .casestudy-main p {
+    font-size: 85%;
+    text-align: center;
+  }
+  .casestudy-main img {
+    max-height: 200px;
+    width: auto;
+  }
+  .casestudy-main .casestudy-project-process {
+    margin: 0;
+  }
+  .casestudy-main .casestudy-project-process .casestudy-process .body-copy {
+    min-width: 350px;
+  }
+  .casestudy-main .casestudy-project-process .casestudy-process .casestudy-process-images {
+    width: auto;
+  }
+  .casestudy-main .casestudy-more-projects hr {
+    opacity: 0;
+  }
+  .casestudy-main .casestudy-more-projects .more-projects a {
+    border: 1px solid #333;
+    font-size: 0.8em;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 0;
+    flex-direction: column;
+  }
+  .row .image-collection {
+    display: flex;
+    flex-direction: column;
+  }
+  .row .image-collection img {
+    margin: 1.5em;
+  }
+}
+@media (min-width: 767px) {
+  .mobile-nav {
+    position: absolute;
+    left: -99999px;
+    top: -99999px;
+  }
+}
